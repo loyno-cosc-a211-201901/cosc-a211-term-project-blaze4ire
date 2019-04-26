@@ -63,6 +63,7 @@ void rolling_dice(){
     }
   }
 }
+//player move function
 void player_move(){
   if(current_player == 1){
     p1_position = p1_position + roll;
@@ -70,10 +71,12 @@ void player_move(){
     p2_position = p2_position + roll;
   }
 }
+//player position function
 void player_position(){
   cout << "Player 1: " << p1_position << endl;
   cout << "Player 2: " << p2_position << endl;
 }
+//player turn function
 void player_turn(){
   int choice;
   cout << "Player " << current_player << " turn:" << endl;
@@ -83,6 +86,7 @@ void player_turn(){
     rolling_dice();
   }
 }
+//switch player function
 void switch_player(){
   if (current_player == 1) {
     current_player = 2;
@@ -90,6 +94,7 @@ void switch_player(){
     current_player = 1;
   }
 }
+//check win function
 bool check_win(){
   if(p1_position >= 40 || p2_position >= 40){
     return true;
@@ -97,7 +102,7 @@ bool check_win(){
     return false;
   }
 }
-
+//play again function
 bool play_again(){
   int playAgain;
   cout << "Do you want to play again? 1(Y)/2(N): ";
@@ -108,7 +113,7 @@ bool play_again(){
     return false;
   }
 }
-
+//start game function
 void startGame(){
   p1_position = 0;
   p2_position = 0;
@@ -127,7 +132,7 @@ void startGame(){
 }
 
 
-
+//main function
 int main() {
   cout << "Welcome to Candy land?" << endl;
   cout << "Start Game Y/N?";
